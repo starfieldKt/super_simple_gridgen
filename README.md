@@ -1,4 +1,7 @@
 # super_simple_gridgen
+[iRIC](https://i-ric.org/) Ver4で動く格子生成ツールです。
+iRICのインストーラからインストールはできないので、installフォルダ内のファイルを`iRIC_v4\private\gridcreators`にフォルダを作成しぶち込んでください。
+
 超簡易格子生成ツール。
 直線格子のみを作ることができます。
 X,Y方向のセルの数と全長またはセルのサイズだけで格子を生成します。
