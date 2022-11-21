@@ -1,0 +1,4 @@
+Super Simple Grid Generator.
+This tool can generate only straight grid.
+You can set parameter in the X and Y directions that the number of cells and overall length or cell size.
+

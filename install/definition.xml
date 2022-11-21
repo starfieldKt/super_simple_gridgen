@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GridGeneratorDefinition 
+	xmlns="www.iric.net/GridGeneratorDefinition/1.0"
+	name="SuperSimpleGridGenerator" caption="Super Simple Grid Generator" version="1.0.22112101" 
+	copyright="Keita Hoshino" executable="super_simple_gridgen.exe" gridtype="structured2d" release="2022.11.21" >
+	
+	<GridGeneratingCondition>
+
+		<Tab name="Channel Geometry" caption="Channel Shape">
+			
+			<Item name="j_chl" caption="How to Set Overall Length of Grid">
+				<Definition valueType="integer" default="0">
+					<Enumeration value="0" caption="Input overall Length Value Directly"/>
+					<Enumeration value="1" caption="Calculated from the Cell Size and Number of Cell"/>
+				</Definition>
+			</Item>
+			
+			<GroupBox>
+				<Item name="chl" caption="Overall Length in X Direction(m)">
+					<Definition valueType="real" default="1">
+						<Dependency>
+							<Condition type="isEqual" target="j_chl" value="0"/>
+						</Dependency>
+					</Definition>
+				</Item>
+				<Item name="dx" caption="Cell Size in X Direction(m)">
+					<Definition valueType="real" default="0.1">
+						<Dependency>
+							<Condition type="isEqual" target="j_chl" value="1"/>
+						</Dependency>
+					</Definition>
+				</Item>
+				<Item name="nx" caption="Number of Cells in X Direction">
+					<Definition valueType="integer" default="10" min="1">
+					</Definition>
+				</Item>
+			</GroupBox>
+
+			<GroupBox>
+				<Item name="width" caption="Overall Length in Y Direction(m)">
+					<Definition valueType="real" default="1">
+						<Dependency>
+							<Condition type="isEqual" target="j_chl" value="0"/>
+						</Dependency>
+					</Definition>
+				</Item>
+				<Item name="dy" caption="Cell Size in Y Direction(m)">
+					<Definition valueType="real" default="0.1">
+						<Dependency>
+							<Condition type="isEqual" target="j_chl" value="1"/>
+						</Dependency>
+					</Definition>
+				</Item>
+				<Item name="ny" caption="Number of Cells in Y Direction">
+					<Definition valueType="integer" default="10" min="1">
+					</Definition>
+				</Item>
+			</GroupBox>
+			
+		</Tab>
+
+	</GridGeneratingCondition>
+
+	<ErrorCodes>
+		<ErrorCode value="1" caption=" You can not set length to 0." />
+	</ErrorCodes>
+
+</GridGeneratorDefinition >
+
